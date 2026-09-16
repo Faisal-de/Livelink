@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#af101a",
+            "primary-container": "#d32f2f",
+            "primary-dark": "#b91c1c",
+            "on-primary": "#ffffff",
+            "blood-red": "#dc2626",
+            "navy-title": "#0f172a",
+            "navy-sub": "#475569",
+            "badge-bg": "#f0f4f9",
+            "badge-text": "#1e293b",
+            "surface-card": "#ffffff"
+          },
+          fontFamily: {
+            heading: ["'Plus Jakarta Sans'", "sans-serif"],
+            sans: ["'Inter'", "sans-serif"]
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'ping-slow': 'ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite'
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      }
+      .pt-safe {
+        padding-top: max(env(safe-area-inset-top, 0px), 16px);
+      }
+    }
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .floating-node {
+      animation: subtleFloat 4s ease-in-out infinite;
+    }
+    .floating-node-rev {
+      animation: subtleFloat 4.5s ease-in-out infinite reverse;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#f8fafc] via-[#f4f7fa] to-[#edf2f7] text-[#0f172a] font-sans min-h-screen flex flex-col justify-between antialiased pt-safe pb-safe selection:bg-red-500 selection:text-white">
+<main class="flex-1 flex flex-col justify-between max-w-md w-full mx-auto px-5 py-2">
+<!-- Top Brand & Header Section -->
+<header class="flex flex-col items-center text-center mt-2">
+<!-- Top Pill Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-slate-200/80 shadow-sm backdrop-blur-sm transition-transform hover:scale-[1.01]"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Lifelink Logo" class="w-7 h-7 object-contain inline-block align-middle"><span class="text-xs font-bold text-slate-800 tracking-tight">Lifelink</span><span class="w-1 h-1 rounded-full bg-slate-300"></span><span class="text-xs font-semibold text-slate-700 tracking-tight">Save Lives. Spread Smiles</span></div>
+<!-- Main Headline -->
+<h1 class="font-heading font-extrabold text-[2rem] leading-[2.35rem] tracking-tight text-[#0f172a] mt-4">
+        Every second matters.
+      </h1>
+<!-- Subtitle -->
+<p class="text-sm sm:text-base text-slate-500 mt-2 max-w-[290px] sm:max-w-xs mx-auto leading-relaxed font-normal">
+        Connect verified blood requests with compatible donors and participating blood banks.
+      </p>
+</header>
+<!-- Center Interactive / Visual Network Illustration -->
+<div class="relative w-full flex flex-col items-center justify-center my-3 py-1">
+<!-- Ambient Glow Behind Radar -->
+<div class="absolute w-56 h-56 rounded-full bg-gradient-to-tr from-rose-200/50 via-red-100/30 to-blue-100/40 blur-2xl -z-10 pointer-events-none"></div>
+<!-- Network Graphic SVG -->
+<div class="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="centerGlow" r="0.5">
+<stop offset="0%" stop-color="#ef4444" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#ef4444" stop-opacity="0"></stop>
+</radialGradient>
+<linearGradient id="dropGrad" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#b91c1c"></stop>
+</linearGradient>
+<filter height="140%" id="shadowGlow" width="140%" x="-20%" y="-20%">
+<feDropShadow dx="0" dy="6" flood-color="#dc2626" flood-opacity="0.35" stdDeviation="8"></feDropShadow>
+</filter>
+<filter height="140%" id="cardShadow" width="140%" x="-20%" y="-20%">
+<feDropShadow dx="0" dy="3" flood-color="#64748b" flood-opacity="0.12" stdDeviation="4"></feDropShadow>
+</filter>
+</defs>
+<!-- Outer Orbit Circles -->
+<circle class="opacity-70" cx="140" cy="140" r="116" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1.2"></circle>
+<circle class="opacity-80" cx="140" cy="140" r="82" stroke="#cbd5e1" stroke-dasharray="3 3" stroke-width="1.2"></circle>
+<!-- Radar Pulse Wave (Animated) -->
+<circle class="animate-pulse-slow origin-center" cx="140" cy="140" fill="url(#centerGlow)" r="48"></circle>
+<!-- Network Connecting Lines -->
+<!-- To Top-Left (Donor) -->
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-linecap="round" stroke-width="1.5" x1="140" x2="68" y1="140" y2="78"></line>
+<!-- To Top-Right (Hospital) -->
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-linecap="round" stroke-width="1.5" x1="140" x2="214" y1="140" y2="82"></line>
+<!-- To Bottom-Left (Drop / Lab) -->
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-linecap="round" stroke-width="1.5" x1="140" x2="62" y1="140" y2="195"></line>
+<!-- To Bottom-Right (Blood Center) -->
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-linecap="round" stroke-width="1.5" x1="140" x2="220" y1="140" y2="198"></line>
+<!-- To Bottom Center Indicator -->
+<line stroke="#fecdd3" stroke-dasharray="2 2" stroke-linecap="round" stroke-width="1.5" x1="140" x2="140" y1="140" y2="228"></line>
+<!-- Top-Left Node: Donor Profile -->
+<g class="floating-node" style="transform-origin: 68px 78px;">
+<circle cx="68" cy="78" fill="#ffffff" filter="url(#cardShadow)" r="18"></circle>
+<path d="M68 72a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-6.5 13a6.5 6.5 0 0 1 13 0H61.5z" fill="#dc2626" opacity="0.85"></path>
+<!-- Online status green dot -->
+<circle cx="78" cy="67" fill="#10b981" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+</g>
+<!-- Top-Right Node: Hospital / Medical Cross -->
+<g class="floating-node-rev" style="transform-origin: 214px 82px;">
+<circle cx="214" cy="82" fill="#ffffff" filter="url(#cardShadow)" r="18"></circle>
+<path d="M211.5 75h5v4.5h4.5v5h-4.5V89h-5v-4.5H207v-5h4.5V75z" fill="#0284c7"></path>
+<!-- Status blue dot -->
+<circle cx="224" cy="72" fill="#38bdf8" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+</g>
+<!-- Bottom-Left Node: Blood Sample Drop -->
+<g class="floating-node" style="transform-origin: 62px 195px;">
+<circle cx="62" cy="195" fill="#ffffff" filter="url(#cardShadow)" r="15"></circle>
+<path d="M62 188.5l2.6 2.6a3.6 3.6 0 1 1-5.2 0l2.6-2.6z" fill="#f59e0b"></path>
+<circle cx="71" cy="186" fill="#f59e0b" r="3" stroke="#ffffff" stroke-width="1"></circle>
+</g>
+<!-- Bottom-Right Node: Energy / Fast Dispatch -->
+<g class="floating-node-rev" style="transform-origin: 220px 198px;">
+<circle cx="220" cy="198" fill="#ffffff" filter="url(#cardShadow)" r="15"></circle>
+<path d="M221 190l-5 7h4l-1 6 5-7h-4l1-6z" fill="#10b981"></path>
+<circle cx="229" cy="190" fill="#10b981" r="3" stroke="#ffffff" stroke-width="1"></circle>
+</g>
+<!-- Bottom Pulse Dot -->
+<circle cx="140" cy="228" fill="#dc2626" r="4.5"></circle>
+<circle class="animate-ping origin-center opacity-75" cx="140" cy="228" r="7.5" stroke="#fca5a5" stroke-width="1"></circle>
+<!-- Center Crimson Hub: Blood Droplet Heartbeat/ECG -->
+<g filter="url(#shadowGlow)"><circle cx="140" cy="140" fill="url(#dropGrad)" r="30"></circle><circle cx="140" cy="140" opacity="0.45" r="33" stroke="#fecaca" stroke-width="2"></circle><foreignObject x="117" y="117" width="46" height="46"><div class="w-full h-full flex items-center justify-center"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Blood Response Emblem" class="w-full h-full object-contain filter drop-shadow-sm"></div></foreignObject></g>
+</svg>
+</div>
+<!-- Live Triage Active Pill -->
+<div class="mt-2 inline-flex items-center gap-2 px-3 py-1 bg-white/95 rounded-full border border-slate-200/90 shadow-sm backdrop-blur-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+</span>
+<span class="text-[11px] font-bold text-red-700 tracking-wider uppercase font-sans">LIVE TRIAGE ACTIVE</span>
+</div>
+</div>
+<!-- Trust Badges / Feature Cards (2 Equal Columns) -->
+<div class="grid grid-cols-2 gap-3 max-w-sm mx-auto w-full my-2">
+<!-- Left: < 15 Min Rapid Dispatch -->
+<div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] transition-all hover:border-slate-200">
+<div class="w-9 h-9 rounded-xl bg-rose-50 border border-rose-100/80 flex items-center justify-center shrink-0">
+<svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+<path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.08-.13L13 2h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.13L11 21z"></path>
+</svg>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[13px] font-bold text-slate-800 leading-tight truncate">&lt; 15 Min</span>
+<span class="text-[11px] text-slate-500 leading-tight mt-0.5 font-medium truncate">Rapid Dispatch</span>
+</div>
+</div>
+<!-- Right: 100% Certified Blood Centers -->
+<div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] transition-all hover:border-slate-200">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100/80 flex items-center justify-center shrink-0">
+<svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+</svg>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[13px] font-bold text-slate-800 leading-tight truncate">100% Certified</span>
+<span class="text-[11px] text-slate-500 leading-tight mt-0.5 font-medium truncate">Blood Centers</span>
+</div>
+</div>
+</div>
+<!-- Bottom Actions and Footer -->
+<div class="flex flex-col gap-2.5 max-w-sm mx-auto w-full mt-2">
+<!-- Primary CTA: Get Started -->
+<button class="w-full h-[52px] px-6 rounded-2xl bg-[#dc2626] hover:bg-[#b91c1c] active:scale-[0.98] text-white font-heading font-semibold text-[15px] flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(220,38,38,0.35)] transition-all duration-150 group cursor-pointer" id="btn-get-started" type="button">
+<span class="">Get Started</span>
+<svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+<!-- Secondary CTA: I already have an account -->
+<button class="w-full h-[48px] px-6 rounded-2xl bg-white hover:bg-slate-50 active:bg-slate-100 active:scale-[0.98] text-[#0f172a] font-medium text-[14px] flex items-center justify-center border border-slate-200/80 shadow-sm transition-all duration-150 cursor-pointer" id="btn-existing-user" type="button">
+        I already have an account
+      </button>
+<!-- Footer Message -->
+<div class="mt-3 mb-1 flex flex-col items-center justify-center gap-2 text-center">
+<div class="inline-flex items-center gap-1.5 text-xs text-slate-500 font-normal">
+<span class="">Be the saviour for someone</span>
+<svg class="w-3.5 h-3.5 text-red-500 fill-current animate-pulse" viewBox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+<!-- iOS Home Indicator Bar -->
+<div class="w-32 h-1 rounded-full bg-slate-300 mt-1"></div>
+</div>
+</div>
+</main>
+<script>
+    (() => {
+      const getStartedBtn = document.getElementById('btn-get-started');
+      const existingUserBtn = document.getElementById('btn-existing-user');
+
+      if (getStartedBtn) {
+        getStartedBtn.addEventListener('click', () => {
+          getStartedBtn.classList.add('opacity-90', 'scale-98');
+          setTimeout(() => getStartedBtn.classList.remove('opacity-90', 'scale-98'), 150);
+        });
+      }
+
+      if (existingUserBtn) {
+        existingUserBtn.addEventListener('click', () => {
+          existingUserBtn.classList.add('bg-slate-100');
+          setTimeout(() => existingUserBtn.classList.remove('bg-slate-100'), 150);
+        });
+      }
+    })();
+  </script>
+
+
+
+
+
+
+</body></html>

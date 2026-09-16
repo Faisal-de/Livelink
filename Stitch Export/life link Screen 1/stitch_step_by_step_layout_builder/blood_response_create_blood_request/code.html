@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode": "class", "theme": {"extend": {"colors": {"surface": "#faf8ff", "inverse-surface": "#283044", "on-error-container": "#93000a", "on-surface-variant": "#5b403d", "on-tertiary-fixed": "#002113", "on-primary-fixed-variant": "#930010", "primary": "#af101a", "on-background": "#131b2e", "secondary": "#6e595a", "primary-container": "#d32f2f", "error": "#ba1a1a", "on-secondary-container": "#745f60", "surface-container-high": "#e2e7ff", "surface-tint": "#ba1a20", "secondary-fixed-dim": "#dbc0c0", "on-error": "#ffffff", "on-primary-container": "#fff2f0", "on-tertiary-fixed-variant": "#005236", "primary-fixed-dim": "#ffb3ac", "on-tertiary": "#ffffff", "outline-variant": "#e4beba", "error-container": "#ffdad6", "on-secondary": "#ffffff", "background": "#faf8ff", "surface-variant": "#dae2fd", "on-secondary-fixed-variant": "#554243", "on-secondary-fixed": "#261818", "tertiary-fixed": "#6ffbbe", "surface-bright": "#faf8ff", "on-tertiary-container": "#d3ffe5", "on-primary-fixed": "#410003", "tertiary-fixed-dim": "#4edea3", "inverse-primary": "#ffb3ac", "inverse-on-surface": "#eef0ff", "secondary-container": "#f8dcdc", "primary-fixed": "#ffdad6", "on-primary": "#ffffff", "secondary-fixed": "#f8dcdc", "on-surface": "#131b2e", "tertiary-container": "#008058", "surface-container": "#eaedff", "surface-container-low": "#f2f3ff", "outline": "#8f6f6c", "tertiary": "#006444", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "surface-dim": "#d2d9f4"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-md": "1rem", "max-width-content": "80rem", "gutter-mobile": "1rem", "space-3xl": "4rem", "space-2xl": "3rem", "space-sm": "0.75rem", "space-xs": "0.5rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "margin-mobile": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem"}, "fontFamily": {"label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-blood-group": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "title-md": ["Plus Jakarta Sans"], "display-sm": ["Plus Jakarta Sans"]}, "fontSize": {"label-lg": ["0.875rem", {"lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg-mobile": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "700"}], "headline-sm": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}], "display-lg": ["3.5rem", {"lineHeight": "4rem", "letterSpacing": "-0.02em", "fontWeight": "800"}], "headline-lg": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-md": ["1rem", {"lineHeight": "1.5rem", "fontWeight": "400"}], "headline-md": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.005em", "fontWeight": "600"}], "label-blood-group": ["1.75rem", {"lineHeight": "2rem", "letterSpacing": "0.02em", "fontWeight": "800"}], "label-md": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-lg": ["1.125rem", {"lineHeight": "1.75rem", "fontWeight": "400"}], "body-sm": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "400"}], "title-md": ["1.125rem", {"lineHeight": "1.5rem", "fontWeight": "600"}], "display-sm": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.015em", "fontWeight": "700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased pt-safe pb-safe selection:bg-primary-container selection:text-on-primary-container"><main class="flex-1 flex flex-col relative w-full bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Top Application Bar -->
+<header class="w-full px-4 py-3 flex items-center justify-between bg-surface sticky top-0 z-30">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/60">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Emergency Response</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-container/15 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md font-semibold">Verified</span>
+</div>
+</header>
+<!-- Page Title Block -->
+<section class="px-5 pt-2 pb-5">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">Request Blood</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+      Fill in verified patient details to immediately mobilize regional donors and hospital blood banks.
+    </p>
+</section>
+<!-- Main Structured Form Area -->
+<form class="px-4 flex flex-col gap-5" id="blood-request-form" onsubmit="event.preventDefault();">
+<!-- Section 1: Blood Group Selection -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1">
+          Select Blood Group
+          <span class="text-primary font-bold">*</span>
+</label>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">Required</span>
+</div>
+<!-- 4x2 Clean Touch Grid -->
+<div class="grid grid-cols-4 gap-2.5" id="blood-group-selector">
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="A+" type="button">A+</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="A-" type="button">A-</button>
+<button class="blood-pill active-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-primary-fixed text-primary shadow-sm active:scale-95 transition-all" data-group="B+" type="button">
+<span class="relative flex items-center gap-1">
+            B+
+            <span class="material-symbols-outlined text-[16px] -mr-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="B-" type="button">B-</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="O+" type="button">O+</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="O-" type="button">O-</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="AB+" type="button">AB+</button>
+<button class="blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all" data-group="AB-" type="button">AB-</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-right">Selected: <strong class="text-primary font-bold" id="selected-blood-display">B+ Positive</strong></p>
+</div>
+<!-- Section 2: Units Required -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<label class="font-title-md text-title-md text-on-surface block">Units Required</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">1 Unit ≈ 450-500 ml whole blood</p>
+</div>
+<!-- Stepper Controller -->
+<div class="flex items-center bg-surface-container-low rounded-xl p-1 shadow-inner">
+<button aria-label="Decrease units" class="w-10 h-10 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface active:scale-90 transition-transform" id="step-decrement" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-14 text-center font-headline-sm text-headline-sm text-on-surface font-bold" id="unit-count-display">2</span>
+<button aria-label="Increase units" class="w-10 h-10 rounded-lg bg-primary-container text-on-primary shadow-sm flex items-center justify-center active:scale-90 transition-transform" id="step-increment" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Section 3: Hospital & Medical Facility -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>
+        Hospital / Medical Facility
+      </label>
+<!-- Searchable Input Mockup -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" placeholder="Search hospital (e.g. Jinnah, Shaukat Khanum)" type="text" value="Shaukat Khanum Memorial Hospital">
+</div>
+<!-- Verified Facility Pill / Quick Info -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container-low/70">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Emergency Wing, Block C</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">7A Khayaban-e-Firdousi, Johar Town, Lahore</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
+</div>
+</div>
+<!-- Section 4: Patient Location -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">my_location</span>
+          Patient Location
+        </label>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-label-md text-label-md font-semibold">GPS Calibrated</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-between p-3 rounded-xl bg-surface-container-low text-left active:bg-surface-container transition-colors" type="button">
+<div class="flex items-center gap-2.5 truncate">
+<span class="material-symbols-outlined text-primary text-[22px]">location_on</span>
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Johar Town, Lahore, Punjab, PK</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold flex-shrink-0 ml-2">Edit Pin</span>
+</button>
+</div>
+<!-- Section 5: Urgency Level -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">hourglass_top</span>
+        Urgency Level
+      </label>
+<div class="flex flex-col gap-2" id="urgency-selector">
+<!-- Critical Option -->
+<label class="urgency-option relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="sr-only" name="urgency" type="radio" value="critical">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center radio-circle">
+<div class="w-2.5 h-2.5 rounded-full bg-primary hidden radio-dot"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Critical</span>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-semibold">Life Support</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immediate requirement (Under 1 hour)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[20px]">bolt</span>
+</label>
+<!-- Urgent Option (Selected Default) -->
+<label class="urgency-option active-urgency relative flex items-center justify-between p-3.5 rounded-xl bg-primary-fixed cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input checked="" class="sr-only" name="urgency" type="radio" value="urgent">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center radio-circle">
+<div class="w-2.5 h-2.5 rounded-full bg-primary block radio-dot"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary font-bold">Urgent</span>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">Pre-Surgery</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Required within 3 to 6 hours</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</label>
+<!-- Standard Option -->
+<label class="urgency-option relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="sr-only" name="urgency" type="radio" value="standard">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center radio-circle">
+<div class="w-2.5 h-2.5 rounded-full bg-primary hidden radio-dot"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Standard</span>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">Elective</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Required within 24 hours</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">calendar_today</span>
+</label>
+</div>
+</div>
+<!-- Section 6: Additional Notes -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface">Additional Notes (Optional)</label>
+<span class="font-label-md text-label-md text-on-surface-variant" id="char-counter">0 / 200</span>
+</div>
+<textarea class="w-full p-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors resize-none placeholder:text-on-surface-variant/60" id="notes-input" maxlength="200" placeholder="e.g. ICU Ward 3 Bed 12, Platelets needed, Doctor: Dr. Arshad Khan..." rows="3"></textarea>
+</div>
+<!-- Pre-submission Verification Assurance Card -->
+<div class="bg-surface-container p-4 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+        Your emergency request is immediately routed to the <strong class="font-semibold">Shaukat Khanum Blood Bank</strong> desk for digital triage prior to broad donor dispatch.
+      </p>
+</div>
+<!-- State Simulator Bar (Delightful micro-preview feature for QA & Review) -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">State Demo:</span>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:scale-95" id="btn-state-ready" type="button">Ready</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:scale-95" id="btn-state-loading" type="button">Loading</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:scale-95" id="btn-state-success" type="button">Success</button>
+</div>
+</div>
+<!-- Bottom Action Button Wrapper -->
+<div class="pt-2 flex flex-col gap-3">
+<button class="w-full h-14 bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-primary active:scale-[0.98] transition-all" id="submit-request-btn" type="button">
+<span id="btn-text" class="">Submit Blood Request</span>
+<span class="material-symbols-outlined text-[20px]" id="btn-icon">arrow_forward</span>
+</button>
+<!-- Security & Trust Footnote -->
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant/80 py-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-md text-label-md">256-Bit Encrypted Healthcare Network • HIPAA Compliant</span>
+</div>
+</div>
+</form>
+<!-- Success Notification Dialog / Floating Toast Overlay -->
+<div class="hidden fixed inset-x-4 bottom-8 z-50 p-4 rounded-xl bg-tertiary text-on-tertiary shadow-xl flex items-center gap-3.5 transform transition-all duration-300" id="success-modal">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="font-label-lg text-label-lg font-bold">Request Dispatched!</h5>
+<p class="font-body-sm text-body-sm text-on-tertiary-container truncate">5 nearby B+ donors alerted in Johar Town.</p>
+</div>
+<button class="text-on-tertiary hover:opacity-80 p-1" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    // 1. Blood Group Selection Logic
+    const bloodButtons = document.querySelectorAll('.blood-pill');
+    const displayElement = document.getElementById('selected-blood-display');
+
+    bloodButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bloodButtons.forEach(b => {
+          b.className = 'blood-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-surface-container-low text-on-surface active:scale-95 transition-all';
+          b.innerHTML = b.getAttribute('data-group');
+        });
+
+        btn.className = 'blood-pill active-pill h-12 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm font-bold bg-primary-fixed text-primary shadow-sm active:scale-95 transition-all';
+        const group = btn.getAttribute('data-group');
+        btn.innerHTML = `<span class="relative flex items-center gap-1">${group}<span class="material-symbols-outlined text-[16px] -mr-1" style="font-variation-settings: 'FILL' 1;">check_circle</span></span>`;
+        if (displayElement) {
+          displayElement.textContent = group + (group.includes('+') ? ' Positive' : ' Negative');
+        }
+      });
+    });
+
+    // 2. Stepper Unit Counter
+    let units = 2;
+    const unitDisplay = document.getElementById('unit-count-display');
+    const incBtn = document.getElementById('step-increment');
+    const decBtn = document.getElementById('step-decrement');
+
+    incBtn?.addEventListener('click', () => {
+      if (units < 10) {
+        units++;
+        unitDisplay.textContent = units;
+      }
+    });
+
+    decBtn?.addEventListener('click', () => {
+      if (units > 1) {
+        units--;
+        unitDisplay.textContent = units;
+      }
+    });
+
+    // 3. Urgency Selector Options
+    const urgencyCards = document.querySelectorAll('.urgency-option');
+    urgencyCards.forEach(card => {
+      card.addEventListener('click', () => {
+        urgencyCards.forEach(c => {
+          c.classList.remove('bg-primary-fixed');
+          c.classList.add('bg-surface-container-low');
+          const title = c.querySelector('span.font-label-lg');
+          if (title) {
+            title.classList.remove('text-primary');
+            title.classList.add('text-on-surface');
+          }
+          const dot = c.querySelector('.radio-dot');
+          if (dot) dot.classList.add('hidden');
+          const circle = c.querySelector('.radio-circle');
+          if (circle) {
+            circle.classList.remove('bg-surface-container-lowest');
+            circle.classList.add('bg-surface-container');
+          }
+        });
+
+        card.classList.remove('bg-surface-container-low');
+        card.classList.add('bg-primary-fixed');
+        const title = card.querySelector('span.font-label-lg');
+        if (title) {
+          title.classList.add('text-primary');
+          title.classList.remove('text-on-surface');
+        }
+        const dot = card.querySelector('.radio-dot');
+        if (dot) dot.classList.remove('hidden');
+        const circle = card.querySelector('.radio-circle');
+        if (circle) {
+          circle.classList.add('bg-surface-container-lowest');
+          circle.classList.remove('bg-surface-container');
+        }
+        const radio = card.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      });
+    });
+
+    // 4. Character Counter
+    const notesInput = document.getElementById('notes-input');
+    const charCounter = document.getElementById('char-counter');
+    notesInput?.addEventListener('input', (e) => {
+      const len = e.target.value.length;
+      charCounter.textContent = `${len} / 200`;
+    });
+
+    // 5. Button State Demonstrator & Submissions
+    const submitBtn = document.getElementById('submit-request-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const successModal = document.getElementById('success-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    function setNormalState() {
+      submitBtn.disabled = false;
+      submitBtn.className = 'w-full h-14 bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-primary active:scale-[0.98] transition-all';
+      btnText.textContent = 'Submit Blood Request';
+      btnIcon.textContent = 'arrow_forward';
+      btnIcon.classList.remove('animate-spin');
+      successModal.classList.add('hidden');
+    }
+
+    function setLoadingState() {
+      submitBtn.disabled = true;
+      submitBtn.className = 'w-full h-14 bg-primary-container/80 text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md cursor-wait';
+      btnText.textContent = 'Verifying & Broadcasting...';
+      btnIcon.textContent = 'progress_activity';
+      btnIcon.classList.add('animate-spin');
+      successModal.classList.add('hidden');
+    }
+
+    function setSuccessState() {
+      setNormalState();
+      successModal.classList.remove('hidden');
+    }
+
+    submitBtn?.addEventListener('click', () => {
+      setLoadingState();
+      setTimeout(() => {
+        setSuccessState();
+      }, 1200);
+    });
+
+    document.getElementById('btn-state-ready')?.addEventListener('click', setNormalState);
+    document.getElementById('btn-state-loading')?.addEventListener('click', setLoadingState);
+    document.getElementById('btn-state-success')?.addEventListener('click', setSuccessState);
+    closeModalBtn?.addEventListener('click', () => successModal.classList.add('hidden'));
+  })();
+</script></main>
+
+</body></html>

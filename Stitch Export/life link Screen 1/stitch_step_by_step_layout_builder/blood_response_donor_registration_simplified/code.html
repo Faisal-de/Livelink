@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Register as Donor - Lifelink Healthcare Network</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#e12d39',
+              darkRed: '#c9202c',
+              lightRed: '#feecee',
+              border: '#e5e7eb',
+              textPrimary: '#111827',
+              textSecondary: '#6b7280',
+              textMuted: '#9ca3af'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-layout">
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: linear-gradient(180deg, #fef5f6 0%, #ffffff 180px, #ffffff 100%);
+    }
+
+    /* Custom subtle form controls matching iOS & screenshot styles */
+    .input-field-group {
+      transition: all 0.2s ease-in-out;
+    }
+    .input-field-group:focus-within {
+      border-color: #f87171;
+      box-shadow: 0 0 0 2px rgba(225, 45, 57, 0.08);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen text-brand-textPrimary flex justify-center selection:bg-red-100 selection:text-red-700">
+<!-- BEGIN: Mobile Container -->
+<main class="w-full max-w-[430px] min-h-screen flex flex-col px-5 pt-3 pb-8 relative bg-white sm:shadow-lg sm:my-3 sm:rounded-3xl">
+<!-- Top Glow / Subtle background tint -->
+<div class="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-[#fceced] to-transparent pointer-events-none -z-0"></div>
+<!-- BEGIN: Top Navigation Bar -->
+<header class="relative z-10 flex items-center justify-between pt-2 pb-5">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-700 hover:bg-gray-50 active:scale-95 transition-transform" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Center Al-Khidmat Response Badge -->
+<div class="flex items-center gap-1.5 px-3 py-1 bg-white border border-gray-100/90 rounded-full shadow-xs"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Lifelink Logo" class="w-5 h-5 object-contain inline-block mr-1.5">
+<span class="text-[10.5px] font-bold tracking-wider text-gray-800 uppercase">Lifelink Healthcare Network • Save Lives. Spread Smiles</span></div>
+<!-- Shield Security Icon -->
+<div class="w-9 h-9 rounded-full flex items-center justify-center text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</header>
+<!-- END: Top Navigation Bar -->
+<!-- BEGIN: Header Section (Logo + Heading) -->
+<section class="relative z-10 flex flex-col items-center text-center mt-1 mb-5">
+<!-- Blood Drop Icon Badge with subtle plus -->
+<div class="relative mb-3">
+<div class="w-14 h-14 rounded-2xl bg-[#feecee]/80 border border-red-100 flex items-center justify-center shadow-sm"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Lifelink Brand Logo" class="w-12 h-12 object-contain"></div>
+<!-- Plus icon badge -->
+<span class="absolute -bottom-0.5 -right-1 w-4 h-4 rounded-full bg-[#e12d39] text-white flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-xs">+</span>
+</div>
+<h1 class="text-[21px] font-bold tracking-tight text-gray-900 leading-tight">Create Donor Account</h1>
+<p class="text-[12.5px] text-gray-500 mt-1 max-w-[280px] leading-snug">
+        Join as a verified life saver to respond to emergency blood requests.
+      </p>
+</section>
+<!-- END: Header Section -->
+<!-- BEGIN: Registration Form -->
+<form class="relative z-10 space-y-3.5" onsubmit="event.preventDefault();">
+<!-- Field 1: Full Name -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Full Name</label>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<!-- User Icon -->
+<svg class="w-4 h-4 text-gray-400 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="e.g. Tariq Mehmood" type="text">
+</div>
+</div>
+<!-- Field 2: Phone Number -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Phone Number</label>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<!-- Flag & Code -->
+<div class="flex items-center gap-1.5 pr-2.5 border-r border-gray-200 mr-2.5 shrink-0 select-none">
+<span class="text-sm">🇵🇰</span>
+<span class="text-[12.5px] font-medium text-gray-700">+92</span>
+</div>
+<!-- Input -->
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0 font-medium" type="tel" value="300 1234567">
+<!-- Verified green check badge -->
+<span class="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 ml-2 shadow-xs">
+<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+</div>
+<!-- Field 3: Email Address (Optional) -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Email Address</label>
+<span class="text-[11px] text-gray-400 font-normal">Optional</span>
+</div>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-gray-400 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="name@example.com" type="email">
+</div>
+</div>
+<!-- Field 4: Blood Group Dropdown (Clean, minimalist input style) -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Blood Group</label>
+<div class="input-field-group relative flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-[#e12d39] mr-2.5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+</svg>
+<select class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0 appearance-none cursor-pointer pr-6">
+<option class="text-gray-400" disabled="" selected="" value="">Select Blood Group (e.g. O+, A+, B+)</option>
+<option value="A+">A Positive (A+)</option>
+<option value="A-">A Negative (A-)</option>
+<option value="B+">B Positive (B+)</option>
+<option value="B-">B Negative (B-)</option>
+<option value="O+">O Positive (O+)</option>
+<option value="O-">O Negative (O-)</option>
+<option value="AB+">AB Positive (AB+)</option>
+<option value="AB-">AB Negative (AB-)</option>
+</select>
+<div class="pointer-events-none absolute right-3.5 flex items-center text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Field 5: City / Location with GPS Pill Button -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">City / Location</label>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-red-500 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="e.g. Lahore, Punjab" type="text">
+<button class="ml-2 text-[10px] font-bold text-[#e12d39] bg-[#feecee] hover:bg-red-100 px-2.5 py-1 rounded-md tracking-wider transition-colors shrink-0" type="button">
+            GPS
+          </button>
+</div>
+</div>
+<!-- Field 6: Last Donation Date -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Last Donation Date</label>
+<span class="text-[11px] text-gray-400 font-normal">Approximate</span>
+</div>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-gray-400 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="e.g. Never / 3+ months ago" type="text">
+</div>
+</div>
+<!-- Field 7: Available to Donate Toggle Row -->
+<div class="flex items-center justify-between p-3 bg-gray-50/70 border border-gray-200/80 rounded-xl">
+<div class="flex flex-col pr-3">
+<span class="text-[12.5px] font-medium text-gray-800">Available for Emergency</span>
+<span class="text-[11px] text-gray-400">Receive urgent direct notifications</span>
+</div>
+<!-- Simple Modern iOS Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-10 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#e12d39]"></div>
+</label>
+</div>
+<!-- Field 8: Password -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Password</label>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-gray-400 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="Minimum 8 characters" type="password">
+<button aria-label="Toggle password visibility" class="text-gray-400 hover:text-gray-600 ml-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Field 9: Confirm Password -->
+<div class="space-y-1">
+<label class="block text-[10.5px] font-bold tracking-wider text-gray-700 uppercase">Confirm Password</label>
+<div class="input-field-group flex items-center h-11 px-3.5 bg-white border border-gray-200 rounded-xl">
+<svg class="w-4 h-4 text-gray-400 mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input class="w-full bg-transparent border-0 p-0 text-[13.5px] text-gray-800 placeholder:text-gray-400 focus:ring-0" placeholder="Re-enter password" type="password">
+</div>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start gap-2 pt-1">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-[#e12d39] border-gray-300 focus:ring-[#e12d39]" id="terms" type="checkbox">
+<label class="text-[11.5px] text-gray-600 leading-tight" for="terms">
+          I agree to the <a class="text-[#e12d39] font-medium hover:underline" href="#">Terms of Service</a> &amp; <a class="text-[#e12d39] font-medium hover:underline" href="#">Privacy Policy</a>
+</label>
+</div>
+<!-- Primary Action CTA Button -->
+<div class="pt-2">
+<button class="w-full h-12 bg-[#e12d39] hover:bg-[#c9202c] active:scale-[0.99] text-white font-semibold text-[14px] rounded-xl flex items-center justify-center gap-1.5 shadow-md shadow-red-500/20 transition-all" type="submit">
+<span class="">Create Donor Account</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</form>
+<!-- END: Registration Form -->
+<!-- BEGIN: Sign In Link -->
+<div class="mt-4 text-center">
+<p class="text-[12.5px] text-gray-600">
+        Already have an account? 
+        <a class="font-semibold text-[#e12d39] hover:underline" href="#">Sign In</a>
+</p>
+</div>
+<!-- END: Sign In Link -->
+<!-- BEGIN: Security Footer -->
+<footer class="mt-auto pt-6 flex items-center justify-center gap-1.5 text-gray-400 text-[10.5px]">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">256-Bit Encrypted Healthcare Network</span>
+</footer>
+<!-- END: Security Footer -->
+</main>
+<!-- END: Mobile Container -->
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lifelink - Hospital Blood Requests</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              900: '#7f1d1d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-resets">
+    /* Hide scrollbar for a seamless native app experience */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f9fc] font-sans antialiased text-slate-800 flex justify-center min-h-screen">
+<!-- Mobile Viewport Container (iOS Phone Frame) -->
+<div class="w-full max-w-md bg-[#fcfdff] min-h-screen flex flex-col shadow-2xl relative pb-28 border-x border-slate-100">
+<!-- BEGIN: TopAppHeader -->
+<header class="px-5 pt-4 pb-2 bg-white sticky top-0 z-30 border-b border-slate-100/80 backdrop-blur-md bg-white/95" data-purpose="app-bar">
+<div class="flex items-center justify-between">
+<!-- Logo and Branding -->
+<div class="flex items-center space-x-3">
+<!-- Circular Blood Drop Vector Icon -->
+<div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center p-1 shadow-sm border border-red-100/60 shrink-0"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Lifelink Logo" class="w-8 h-8 object-contain rounded-full shadow-sm"></div>
+<div>
+<h1 class="text-base font-extrabold text-slate-900 tracking-tight leading-none">Lifelink</h1>
+<p class="text-[11px] font-medium text-slate-400 mt-0.5">Save Lives. Spread Smiles.</p>
+</div>
+</div>
+<!-- Header Actions: Notification and Close -->
+<div class="flex items-center space-x-2">
+<!-- Notification Bell with Alert Dot -->
+<button aria-label="Notifications" class="relative w-9 h-9 rounded-full bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+</button>
+<!-- Close / Dismiss Button -->
+<button aria-label="Close screen" class="w-9 h-9 rounded-full bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Sub-header: Navigation Title & Desk Badge -->
+<div class="flex items-center justify-between mt-5 mb-1.5">
+<div class="flex items-center space-x-3">
+<button aria-label="Go back" class="w-8 h-8 rounded-full border border-slate-200/80 bg-white flex items-center justify-center text-slate-700 shadow-sm hover:bg-slate-50">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div>
+<span class="block text-[10px] font-bold tracking-wider uppercase text-red-600 leading-tight">Lifelink Healthcare Network</span>
+<h2 class="text-xl font-extrabold text-slate-900 leading-tight tracking-tight">Blood Requests</h2>
+</div>
+</div>
+<!-- Desk Location Tag -->
+<span class="text-xs font-semibold px-3 py-1 bg-white border border-slate-200/80 rounded-full text-slate-700 shadow-xs">
+          Johar Town Desk
+        </span>
+</div>
+</header>
+<!-- END: TopAppHeader -->
+<!-- BEGIN: MainContent -->
+<main class="px-4 pt-3 space-y-4">
+<!-- BEGIN: TelemetryMetrics -->
+<!-- 3-Column Telemetry Box matching Inventory Screen -->
+<section class="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-xs" data-purpose="telemetry-metrics">
+<div class="grid grid-cols-3 divide-x divide-slate-100 text-center">
+<!-- Column 1: Total Requests -->
+<div class="px-1.5 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Total Requests</span>
+<div class="my-1">
+<span class="text-xl font-extrabold text-slate-900">8</span>
+<span class="text-xs font-medium text-slate-500 ml-0.5">Active</span>
+</div>
+<div class="flex items-center justify-center space-x-1 text-[10px] font-semibold text-emerald-600">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">Live Dispatch</span>
+</div>
+</div>
+<!-- Column 2: Critical Urgency -->
+<div class="px-1.5 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Critical</span>
+<div class="my-1">
+<span class="text-xl font-extrabold text-red-600">3</span>
+<span class="text-xs font-medium text-red-500 ml-0.5">Urgent</span>
+</div>
+<span class="text-[10px] font-bold text-red-600">Trauma / OR</span>
+</div>
+<!-- Column 3: Fulfilled -->
+<div class="px-1.5 flex flex-col justify-between">
+<span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Fulfilled</span>
+<div class="my-1">
+<span class="text-xl font-extrabold text-slate-900">12</span>
+<span class="text-xs font-medium text-slate-500 ml-0.5">Today</span>
+</div>
+<div class="flex items-center justify-center space-x-1 text-[10px] font-semibold text-indigo-600">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+<span class="">94% Match Rate</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TelemetryMetrics -->
+<!-- BEGIN: FilterPills -->
+<section data-purpose="category-filters">
+<div class="flex items-center justify-between mb-2.5 px-0.5">
+<span class="text-[11px] font-extrabold tracking-wider uppercase text-slate-500">Active Requests</span>
+<button class="text-[11px] font-bold text-red-600 hover:text-red-700 flex items-center space-x-1 transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Quick Refresh</span>
+</button>
+</div>
+<!-- Horizontal Filter Badges List -->
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-1">
+<!-- Active filter -->
+<button class="px-4 py-2 bg-slate-900 text-white rounded-full text-xs font-bold shrink-0 shadow-sm">
+            All Requests (8)
+          </button>
+<!-- Secondary filters -->
+<button class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-full text-xs font-semibold shrink-0">
+            Critical (3)
+          </button>
+<button class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-full text-xs font-semibold shrink-0">
+            In Progress (3)
+          </button>
+<button class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-full text-xs font-semibold shrink-0">
+            Matched (2)
+          </button>
+</div>
+</section>
+<!-- END: FilterPills -->
+<!-- BEGIN: RequestsList -->
+<section class="space-y-3" data-purpose="blood-request-cards">
+<!-- Card 1: O- Negative -->
+<article class="bg-white rounded-2xl p-3.5 border border-red-200 shadow-sm relative overflow-hidden flex items-center justify-between gap-3">
+<!-- Left Status Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500"></div>
+<div class="flex items-center space-x-3.5 pl-1.5">
+<!-- Left Blood Group Badge -->
+<div class="w-13 h-13 min-w-[50px] py-1.5 bg-red-50 border border-red-100 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="text-base font-extrabold text-red-600 leading-none">O-</span>
+<span class="text-[9px] font-bold text-red-400 mt-1 uppercase tracking-tight">RH NEG</span>
+</div>
+<!-- Middle Meta Details -->
+<div>
+<div class="flex items-center space-x-2">
+<h3 class="text-sm font-extrabold text-slate-900">O- Negative <span class="text-slate-400 font-normal">•</span> 2 Units</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-600 border border-rose-100 flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+<span class="">Critical (1 hr)</span>
+</span>
+</div>
+<p class="text-xs font-medium text-slate-600 mt-0.5">Shaukat Khanum Memorial • Trauma ICU</p>
+<p class="text-[10px] text-slate-400 mt-0.5 font-medium">REQ-9482 • Attending: Dr. Tariq • 14 Donors Alerted</p>
+</div>
+</div>
+<!-- Right Action: View Details Button -->
+<button aria-label="View request REQ-9482 details" class="shrink-0 p-2 text-slate-400 hover:text-slate-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</article>
+<!-- Card 2: B+ Positive -->
+<article class="bg-white rounded-2xl p-3.5 border border-amber-200/80 shadow-xs relative overflow-hidden flex items-center justify-between gap-3">
+<!-- Left Status Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-amber-400"></div>
+<div class="flex items-center space-x-3.5 pl-1.5">
+<!-- Left Blood Group Badge -->
+<div class="w-13 h-13 min-w-[50px] py-1.5 bg-amber-50/60 border border-amber-100 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="text-base font-extrabold text-amber-700 leading-none">B+</span>
+<span class="text-[9px] font-bold text-amber-500 mt-1 uppercase tracking-tight">RH POS</span>
+</div>
+<!-- Middle Meta Details -->
+<div>
+<div class="flex items-center space-x-2">
+<h3 class="text-sm font-extrabold text-slate-900">B+ Positive <span class="text-slate-400 font-normal">•</span> 1 Unit</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-200">
+                  ● Matching (3 hrs)
+                </span>
+</div>
+<p class="text-xs font-medium text-slate-600 mt-0.5">Doctors Hospital • Ward 4B Surgical</p>
+<p class="text-[10px] text-slate-400 mt-0.5 font-medium">REQ-8812 • Attending: Dr. Sara • 6 Donors Responded</p>
+</div>
+</div>
+<!-- Right Action: View Details Button -->
+<button aria-label="View request REQ-8812 details" class="shrink-0 p-2 text-slate-400 hover:text-slate-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</article>
+<!-- Card 3: A+ Positive -->
+<article class="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-xs relative overflow-hidden flex items-center justify-between gap-3">
+<!-- Left Status Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500"></div>
+<div class="flex items-center space-x-3.5 pl-1.5">
+<!-- Left Blood Group Badge -->
+<div class="w-13 h-13 min-w-[50px] py-1.5 bg-slate-50 border border-slate-200/80 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="text-base font-extrabold text-slate-800 leading-none">A+</span>
+<span class="text-[9px] font-bold text-slate-400 mt-1 uppercase tracking-tight">RH POS</span>
+</div>
+<!-- Middle Meta Details -->
+<div>
+<div class="flex items-center space-x-2">
+<h3 class="text-sm font-extrabold text-slate-900">A+ Positive <span class="text-slate-400 font-normal">•</span> 3 Units</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-100">
+                  ● Donor En Route
+                </span>
+</div>
+<p class="text-xs font-medium text-slate-600 mt-0.5">Jinnah Hospital • Emergency OT</p>
+<p class="text-[10px] text-slate-400 mt-0.5 font-medium">REQ-7104 • Matched with Donor DNR-5821</p>
+</div>
+</div>
+<!-- Right Action -->
+<button aria-label="View request REQ-7104 details" class="shrink-0 p-2 text-slate-400 hover:text-slate-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</article>
+<!-- Card 4: AB- Negative -->
+<article class="bg-white rounded-2xl p-3.5 border border-rose-200 shadow-xs relative overflow-hidden flex items-center justify-between gap-3">
+<!-- Left Status Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-rose-500"></div>
+<div class="flex items-center space-x-3.5 pl-1.5">
+<!-- Left Blood Group Badge -->
+<div class="w-13 h-13 min-w-[50px] py-1.5 bg-rose-50 border border-rose-100 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="text-base font-extrabold text-rose-600 leading-none">AB-</span>
+<span class="text-[9px] font-bold text-rose-400 mt-1 uppercase tracking-tight">RH NEG</span>
+</div>
+<!-- Middle Meta Details -->
+<div>
+<div class="flex items-center space-x-2">
+<h3 class="text-sm font-extrabold text-slate-900">AB- Negative <span class="text-slate-400 font-normal">•</span> 1 Unit</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-600 border border-rose-100">
+                  ● Urgent Need
+                </span>
+</div>
+<p class="text-xs font-medium text-slate-600 mt-0.5">Services Hospital • Pediatric Ward</p>
+<p class="text-[10px] text-slate-400 mt-0.5 font-medium">REQ-6420 • Broadcast 10km radius</p>
+</div>
+</div>
+<!-- Right Action -->
+<button aria-label="View request REQ-6420 details" class="shrink-0 p-2 text-slate-400 hover:text-slate-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</article>
+<!-- Card 5: O+ Positive -->
+<article class="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-xs relative overflow-hidden flex items-center justify-between gap-3">
+<!-- Left Status Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-400"></div>
+<div class="flex items-center space-x-3.5 pl-1.5">
+<!-- Left Blood Group Badge -->
+<div class="w-13 h-13 min-w-[50px] py-1.5 bg-slate-50 border border-slate-200/80 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="text-base font-extrabold text-slate-800 leading-none">O+</span>
+<span class="text-[9px] font-bold text-slate-400 mt-1 uppercase tracking-tight">RH POS</span>
+</div>
+<!-- Middle Meta Details -->
+<div>
+<div class="flex items-center space-x-2">
+<h3 class="text-sm font-extrabold text-slate-900">O+ Positive <span class="text-slate-400 font-normal">•</span> 2 Units</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100">
+                  ● Verified
+                </span>
+</div>
+<p class="text-xs font-medium text-slate-600 mt-0.5">Fatima Memorial Hospital • Gyne Ward</p>
+<p class="text-[10px] text-slate-400 mt-0.5 font-medium">REQ-5931 • Scheduled Transfusion</p>
+</div>
+</div>
+<!-- Right Action -->
+<button aria-label="View request REQ-5931 details" class="shrink-0 p-2 text-slate-400 hover:text-slate-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</article>
+</section>
+<!-- END: RequestsList -->
+<!-- BEGIN: BottomActionSection -->
+<section class="pt-2 space-y-2.5 pb-2" data-purpose="call-to-actions">
+<!-- Primary Action CTA -->
+<button class="w-full bg-[#b91c1c] hover:bg-[#991b1b] active:scale-[0.99] text-white py-3.5 px-4 rounded-xl font-bold text-sm shadow-md flex items-center justify-center space-x-2 transition-all">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+<span class="">Create New Blood Request</span>
+</button>
+<!-- Emergency Hotline Pill Banner -->
+<a class="w-full bg-slate-900 text-white rounded-xl py-3 px-4 flex items-center justify-between shadow-sm active:bg-slate-800 transition-colors" href="tel:1021">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center text-white text-xs">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.05 15.05 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9a1 1 0 00-1-1H4a1 1 0 00-1 1c0 9.39 7.61 17 17 17a1 1 0 001-1v-3.52a1 1 0 00-.99-1z"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-slate-100">Emergency Blood Dispatch Desk</span>
+</div>
+<span class="text-xs font-bold text-amber-400 tracking-wide">Hotline: 1021 ↗</span>
+</a>
+<!-- Compliance & Security Trust Info -->
+<div class="flex items-center justify-center space-x-1.5 text-slate-400 pt-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<span class="text-[11px] font-medium text-slate-500 tracking-tight">256-Bit Encrypted • HIPAA &amp; PHC Verified</span>
+</div>
+</section>
+<!-- END: BottomActionSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomNavigationBar -->
+<!-- Fixed Bottom App Navigation -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-slate-200/80 px-6 py-2.5 z-40" data-purpose="mobile-nav">
+<div class="flex justify-between items-center">
+<!-- Tab: Home -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#home">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<!-- Tab: Requests (ACTIVE) -->
+<a class="flex flex-col items-center space-y-1 text-red-600 group" href="#requests">
+<div class="relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="absolute -top-1 -right-1.5 w-1.5 h-1.5 bg-red-600 rounded-full"></span>
+</div>
+<span class="text-[10px] font-bold">Requests</span>
+<span class="w-1 h-1 rounded-full bg-red-600 -mt-0.5"></span>
+</a>
+<!-- Tab: Inventory -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#inventory">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium">Inventory</span>
+</a>
+<!-- Tab: Profile -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#profile">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<!-- END: BottomNavigationBar -->
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>

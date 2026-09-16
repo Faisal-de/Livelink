@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Lifelink - Request Details</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              crimson: '#C51E28',
+              crimsonDark: '#A3131B',
+              crimsonLight: '#FDECEF',
+              accentRed: '#E53935'
+            },
+            status: {
+              activeBg: '#ECFDF3',
+              activeText: '#027A48',
+              urgentBg: '#FEF3F2',
+              urgentText: '#B42318',
+              pendingBg: '#FFFAEB',
+              pendingText: '#B54708'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          },
+          boxShadow: {
+            softCard: '0 2px 8px -2px rgba(16, 24, 40, 0.05), 0 1px 3px -1px rgba(16, 24, 40, 0.05)',
+            subtle: '0 1px 2px rgba(16, 24, 40, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Base Reset Style Tag -->
+<style data-purpose="base-styles">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #F8FAFC;
+    }
+    .modal-backdrop {
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex justify-center bg-slate-100">
+<!-- Mobile Screen Container (Standard iOS/Android Viewport Frame) -->
+<div class="w-full max-w-[420px] min-h-screen bg-slate-50 flex flex-col shadow-xl relative pb-24">
+<!-- BEGIN: TopAppHeader -->
+<header class="bg-white px-4 py-3.5 flex items-center justify-between border-b border-slate-100 sticky top-0 z-30" data-purpose="top-app-bar">
+<div class="flex items-center space-x-3">
+<!-- Official Blood Response Lifeline Droplet Logo Mark -->
+<div class="relative w-9 h-9 rounded-full bg-rose-50 flex items-center justify-center text-brand-crimson"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V2PmvnF3Rnj5XF5OBxfvyJZUGJ3CofGvKhNDfu8yiqPyB3LxYIENBVK6TrtdXiEj9T9JYWDnIpm36_MD6X9aMG_hpXjSNRGwZngWDF7K1ss-frB29I_KWlvJEbdLEl0G-4d86wYuJOYWhD-GFZoTLcC2ZR9YqyhlCj4iAroUJoCQloTDZWlcq0yWx0v7YbUnin9xufZCnMzAObOT8JKKYdHGS8lb_FSSTDALzYRsAXo4917S7uTVWLh20" alt="Lifelink Logo" class="w-8 h-8 object-contain rounded-full shadow-sm"></div>
+<div>
+<h1 class="text-base font-bold tracking-tight text-brand-crimson leading-none">Lifelink</h1>
+<p class="text-xs text-slate-500 font-medium mt-0.5">Save Lives. Spread Smiles</p>
+</div>
+</div>
+<!-- Action Utilities (Notifications & Close) -->
+<div class="flex items-center space-x-2">
+<button aria-label="Notifications" class="relative p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-600 rounded-full border-2 border-white"></span>
+</button>
+<button aria-label="Close Screen" class="p-1.5 rounded-full text-slate-500 bg-slate-100 hover:bg-slate-200 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: TopAppHeader -->
+<!-- BEGIN: NavigationSubHeader -->
+<section class="px-4 pt-3 pb-2 flex items-center justify-between" data-purpose="sub-navigation">
+<a aria-label="Go Back" class="w-9 h-9 rounded-full bg-white shadow-subtle border border-slate-200/70 flex items-center justify-center text-slate-700 active:scale-95 transition-transform" href="javascript:void(0)">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</a>
+<div class="text-center">
+<span class="text-[10.5px] tracking-wider uppercase font-bold text-brand-crimson">LIFELINK NETWORK</span>
+<h2 class="text-lg font-bold text-slate-900 leading-tight">Request Details</h2>
+</div>
+<button aria-label="Share Request Token" class="w-9 h-9 rounded-full bg-white shadow-subtle border border-slate-200/70 flex items-center justify-center text-slate-700 active:scale-95 transition-transform" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</section>
+<!-- END: NavigationSubHeader -->
+<!-- Main Content Container -->
+<main class="flex-1 px-4 py-2 space-y-3.5">
+<!-- BEGIN: HeroBloodGroupCard -->
+<section class="bg-white rounded-2xl p-4 border border-slate-100 shadow-softCard" data-purpose="hero-blood-card">
+<!-- Top Blood Header Row -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center border border-rose-100/60">
+<svg class="w-6 h-6 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<div>
+<p class="text-[11px] font-bold tracking-wider text-slate-500 uppercase">BLOOD GROUP</p>
+<p class="text-xl font-extrabold text-slate-900 leading-tight">
+<span class="text-brand-crimson font-black text-2xl">B+</span> Positive
+              </p>
+</div>
+</div>
+<!-- Status Pill -->
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+            Active Open
+          </span>
+</div>
+<!-- Metric Sub-Cards (Split 2-Columns) -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<!-- Required Units -->
+<div class="bg-slate-50/90 rounded-xl p-3 border border-slate-100">
+<span class="text-[10px] uppercase tracking-wider font-semibold text-slate-500 block">Required Units</span>
+<div class="flex items-baseline space-x-1 mt-0.5">
+<span class="text-lg font-bold text-slate-900">2 Units</span>
+</div>
+<span class="text-[11px] text-slate-500 block mt-0.5">(Whole Blood)</span>
+</div>
+<!-- Reference Code with Copy Action -->
+<div class="bg-slate-50/90 rounded-xl p-3 border border-slate-100 flex flex-col justify-between">
+<span class="text-[10px] uppercase tracking-wider font-semibold text-slate-500 block">Reference</span>
+<div class="flex items-center justify-between mt-0.5">
+<span class="text-sm font-bold text-slate-900 font-mono tracking-tight">#REQ-9482</span>
+<button class="text-slate-400 hover:text-slate-700 p-1" onclick="copyReference('#REQ-9482')" title="Copy Reference" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroBloodGroupCard -->
+<!-- BEGIN: FulfillmentTelemetryCard -->
+<section class="bg-white rounded-2xl p-4 border border-slate-100 shadow-softCard space-y-3" data-purpose="fulfillment-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+<h3 class="text-sm font-bold text-slate-900">Fulfillment &amp; Telemetry</h3>
+</div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+            Partially Fulfilled
+          </span>
+</div>
+<!-- Progress Indicator -->
+<div>
+<div class="flex justify-between text-xs font-medium text-slate-600 mb-1.5">
+<span class="">Progress: <strong>1 of 2 Units Secured</strong></span>
+<span class="font-bold text-slate-800">50%</span>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden flex">
+<div class="bg-brand-crimson h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Dispatched Volunteer / Donor Telemetry (HIPAA & Privacy Safe) -->
+<div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 flex items-center">
+<svg class="w-3.5 h-3.5 mr-1.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+</svg>
+              Matched Broadcast
+            </span>
+<span class="font-semibold text-slate-800">14 nearby donors alerted</span>
+</div>
+<div class="flex items-center justify-between text-xs pt-1 border-t border-slate-200/60">
+<span class="text-slate-500 flex items-center">
+<svg class="w-3.5 h-3.5 mr-1.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              Active Donor Response
+            </span>
+<span class="font-semibold text-emerald-700">1 Donor En Route • ETA 18m</span>
+</div>
+</div>
+</section>
+<!-- END: FulfillmentTelemetryCard -->
+<!-- BEGIN: ClinicalDetailsCard -->
+<section class="bg-white rounded-2xl p-4 border border-slate-100 shadow-softCard space-y-3.5" data-purpose="clinical-details">
+<!-- Card Header -->
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+<div class="flex items-center space-x-2">
+<div class="w-5 h-5 rounded border border-red-500 flex items-center justify-center text-red-600">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+</svg>
+</div>
+<h3 class="text-sm font-bold text-slate-900">Clinical Details</h3>
+</div>
+<span class="text-[11px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">
+            Hospital Verified
+          </span>
+</div>
+<!-- Facility Info -->
+<div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">HOSPITAL / FACILITY</span>
+<p class="text-sm font-bold text-slate-900 mt-0.5">Shaukat Khanum Memorial Hospital</p>
+<p class="text-xs text-slate-500 mt-0.5">Johar Town, Lahore • Trauma Wing Desk</p>
+</div>
+<!-- Key Clinical Field Rows -->
+<div class="space-y-2 pt-1 text-xs">
+<!-- Urgency Level Row -->
+<div class="flex items-center justify-between">
+<span class="text-slate-500 font-medium">URGENCY LEVEL</span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-50 text-brand-crimson border border-rose-200">
+<svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              Urgent (within 3–6 hrs)
+            </span>
+</div>
+<!-- Token Row -->
+<div class="flex items-center justify-between">
+<span class="text-slate-500 font-medium">VERIFICATION TOKEN</span>
+<span class="font-mono font-bold text-emerald-700 flex items-center text-xs">
+              #SK-882 <span class="mx-1.5 text-slate-300">•</span> Certified
+            </span>
+</div>
+<!-- Broadcast Count -->
+<div class="flex items-center justify-between">
+<span class="text-slate-500 font-medium">BROADCAST STATUS</span>
+<span class="font-semibold text-slate-700">14 nearby donors alerted</span>
+</div>
+<!-- Created Time -->
+<div class="flex items-center justify-between">
+<span class="text-slate-500 font-medium">CREATED</span>
+<span class="font-medium text-slate-600">Today, 14:28 PM (42m ago)</span>
+</div>
+</div>
+</section>
+<!-- END: ClinicalDetailsCard -->
+<!-- BEGIN: StaffActionControls -->
+<section class="bg-white rounded-2xl p-4 border border-slate-100 shadow-softCard space-y-2.5" data-purpose="hospital-actions">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Hospital Staff Actions</h4>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="w-full py-2.5 px-3 bg-white border border-slate-300 text-slate-800 text-xs font-bold rounded-xl active:bg-slate-100 transition-colors shadow-sm flex items-center justify-center space-x-1.5" onclick="openActionModal('update')" type="button">
+<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Update Status</span>
+</button>
+<button class="w-full py-2.5 px-3 bg-emerald-600 border border-emerald-600 text-white text-xs font-bold rounded-xl active:bg-emerald-700 transition-colors shadow-sm flex items-center justify-center space-x-1.5" onclick="openActionModal('fulfill')" type="button">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="">Mark Fulfilled</span>
+</button>
+</div>
+</section>
+<!-- END: StaffActionControls -->
+<!-- BEGIN: EmergencyDeskHotlineCard -->
+<section class="bg-white rounded-2xl p-4 border border-slate-100 shadow-softCard space-y-3" data-purpose="emergency-hotline">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-rose-50 flex items-center justify-center text-brand-crimson">
+<!-- Headset / Support Desk Icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">ASSIGNED DESK</span>
+<p class="text-xs font-bold text-slate-900 leading-tight">Lifelink Emergency Response</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1"></span>
+            Active
+          </span>
+</div>
+<!-- Emergency Hotline Direct Button -->
+<a class="w-full bg-brand-crimson hover:bg-brand-crimsonDark active:scale-[0.99] transition-all text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center space-x-2 shadow-sm" href="tel:1021">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"></path>
+</svg>
+<span class="">Emergency Hotline: 1021</span>
+</a>
+</section>
+<!-- END: EmergencyDeskHotlineCard -->
+<!-- BEGIN: NavigationFooterActions -->
+<div class="pt-1 pb-4 space-y-3" data-purpose="footer-links">
+<!-- Live Tracking Button -->
+<button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-colors" type="button">
+<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Back to Live Tracking</span>
+</button>
+<!-- Secondary Return Link -->
+<div class="text-center pt-1">
+<a class="text-xs font-bold text-slate-700 hover:text-brand-crimson transition-colors" href="javascript:void(0)">
+            Return to Home Dashboard
+          </a>
+</div>
+<!-- Compliance & Security Badge -->
+<div class="flex items-center justify-center space-x-1.5 text-[11px] text-slate-400 pt-2">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">256-Bit Encrypted • HIPAA Verified</span>
+</div>
+</div>
+<!-- END: NavigationFooterActions -->
+</main><nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[420px] bg-white border-t border-slate-200/70 py-2 px-6 flex justify-between items-center z-30 shadow-lg" data-purpose="bottom-navigation"><a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-700 transition-colors" href="javascript:void(0)"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="text-[10px] font-medium tracking-tight">Home</span></a><a class="flex flex-col items-center space-y-1 text-brand-crimson font-bold relative" href="javascript:void(0)"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span class="text-[10px] tracking-tight">Requests</span><span class="w-1 h-1 bg-brand-crimson rounded-full absolute -bottom-1"></span></a><a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-700 transition-colors" href="javascript:void(0)"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg><span class="text-[10px] font-medium tracking-tight">Inventory</span></a><a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-700 transition-colors" href="javascript:void(0)"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="text-[10px] font-medium tracking-tight">Profile</span></a></nav>
+<!-- BEGIN: ConfirmationModalSheet -->
+<!-- Interactive Status Confirmation Sheet (Hidden by Default) -->
+<div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 hidden modal-backdrop bg-slate-900/40 transition-opacity" id="actionModal">
+<div class="w-full max-w-[420px] bg-white rounded-t-3xl sm:rounded-2xl p-5 shadow-2xl space-y-4 animate-in slide-in-from-bottom duration-200">
+<!-- Sheet Handle for iOS style -->
+<div class="w-10 h-1 bg-slate-200 rounded-full mx-auto sm:hidden"></div>
+<div class="text-center space-y-1">
+<div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-2" id="modalIconContainer">
+<svg class="w-6 h-6" fill="none" id="modalIcon" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<h3 class="text-base font-bold text-slate-900" id="modalTitle">Mark Request as Fulfilled?</h3>
+<p class="text-xs text-slate-500 leading-relaxed px-4" id="modalDescription">
+            Confirm that 2 units of B+ Whole Blood have been received, tested, and validated by the blood bank.
+          </p>
+</div>
+<div class="space-y-2 pt-2">
+<button class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow transition-all" id="modalConfirmButton" onclick="confirmModalAction()" type="button">
+            Confirm &amp; Proceed
+          </button>
+<button class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl transition-colors" onclick="closeActionModal()" type="button">
+            Cancel
+          </button>
+</div>
+</div>
+</div>
+<!-- END: ConfirmationModalSheet -->
+<!-- Toast Notification for Copy / Feedback -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-4 py-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center space-x-1.5" id="toast">
+<svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span id="toastMsg" class="">Copied to clipboard</span>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script data-purpose="interaction-scripts">
+    // Clipboard helper with visual toast
+    function copyReference(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+      showToast("Reference " + text + " copied");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2200);
+    }
+
+    // Workflow Modal Handlers
+    function openActionModal(type) {
+      const modal = document.getElementById('actionModal');
+      const title = document.getElementById('modalTitle');
+      const desc = document.getElementById('modalDescription');
+      const btn = document.getElementById('modalConfirmButton');
+      const iconContainer = document.getElementById('modalIconContainer');
+
+      if (type === 'fulfill') {
+        title.innerText = "Mark Request as Fulfilled?";
+        desc.innerText = "Confirm that 2 units of B+ Whole Blood have been received and verified by the clinical desk.";
+        btn.innerText = "Confirm Fulfilled";
+        btn.className = "w-full py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow transition-all";
+        iconContainer.className = "w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-2";
+      } else {
+        title.innerText = "Update Clinical Status";
+        desc.innerText = "Notify regional dispatch and matched donors regarding requisition priority or requirement modifications.";
+        btn.innerText = "Open Status Selector";
+        btn.className = "w-full py-3 bg-brand-crimson hover:bg-brand-crimsonDark active:scale-[0.99] text-white font-bold text-xs rounded-xl shadow transition-all";
+        iconContainer.className = "w-12 h-12 rounded-full bg-rose-50 text-brand-crimson flex items-center justify-center mx-auto mb-2";
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeActionModal() {
+      const modal = document.getElementById('actionModal');
+      modal.classList.add('hidden');
+    }
+
+    function confirmModalAction() {
+      closeActionModal();
+      showToast("Status updated successfully");
+    }
+  </script>
+
+
+
+
+
+
+
+
+</body></html>

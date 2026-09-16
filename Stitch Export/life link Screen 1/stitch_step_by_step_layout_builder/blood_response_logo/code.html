@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="dropGrad" x1="20" y1="10" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="60%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#DC2626" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Blood Drop Shape -->
+  <path d="M50 8C50 8 20 44 20 62C20 78.5685 33.4315 92 50 92C66.5685 92 80 78.5685 80 62C80 44 50 8 50 8Z" fill="url(#dropGrad)" filter="url(#softGlow)"/>
+  <!-- Inner Highlight Arc -->
+  <path d="M30 55C30 45 38 35 46 25" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"/>
+  <!-- Emergency Medical Heartbeat Pulse / Cross -->
+  <path d="M36 64H44L47 57L52 71L56 61L59 64H64" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
